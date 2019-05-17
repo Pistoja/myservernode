@@ -32,7 +32,28 @@ router.get('/:id/', (req, res) => {
   res.json(listadb.listadb.filter(todos => todos.id === id))
 })
 
-
+//Post
+router.post('/form', (req,res) => {
+    const body = req.body
+    const {
+      id,
+      titolo,    
+      descrizione
+    } = req.body
+  
+    const status ={}
+    console.log(id, titolo, descrizione)
+    if(id){
+      status.code = 'ok'
+      status.message = `Aggiunto id ${id}`
+    } else
+    { status.code = 'error'
+      status.message = 'id non valido'
+      status.campo = 'id'
+  
+    } 
+    res.send(status)
+  })
 
 
 module.exports = router
