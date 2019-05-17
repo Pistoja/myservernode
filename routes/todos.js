@@ -55,6 +55,14 @@ router.post('/form', (req,res) => {
     res.send(status)
   })
 
+  //Update
+  router.put('/form', (req, res) => {
+    const status = {
+      message: "Text Field Updated"
+    }
+    res.send(status)
+  })
+
 
 module.exports = router
 
