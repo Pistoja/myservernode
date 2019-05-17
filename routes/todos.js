@@ -63,6 +63,14 @@ router.post('/form', (req,res) => {
     res.send(status)
   })
 
+  //DELETE
+  router.delete('/form', (req, res) => {
+    const status = {
+      message: "Text Field Deleted"
+    }
+    res.send(status)
+  })
+
 
 module.exports = router
 
